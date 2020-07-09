@@ -1,1 +1,1 @@
-# React/Redux/Router Starter Project
+# Elinor JS React Portfolio Project
