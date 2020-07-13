@@ -8,11 +8,12 @@ export default class PortfolioContainer extends Component {
 
         this.state = {
             pageTitle: "Welcome To My Portfolio" ,
+            isLoading: false ,
             data: [
-                { title: "Rex" },
-                { title: "Cody" }, 
-                { title: "Fives" }, 
-                { title: "Echo" }
+                { title: "Rex" , category: 'Captain' },
+                { title: "Ahsoka" , category: 'Commander' }, 
+                { title: "Fives" , category: 'ArcTrooper'}, 
+                { title: "Echo" , category: 'ArcTrooper'}
             ]
         };
     }
@@ -21,12 +22,37 @@ export default class PortfolioContainer extends Component {
         return this.state.data.map(item => {
             return <PortfolioItem title = {item.title} url = {"google.com"} />
         });
+    
+        this.handleFilter = this.handleFilter.bind(this);
+    }
+
+    handleFilter(filter) {
+        this.setState({
+            data: this.state.data.filter(item => {
+                return item.category === filter;
+            })
+        })
     }
 
     render () {
+        if (this.state.isLoading) {
+            return <div>Loading...</div>;
+        }
+        
+        
         return (
             <div>
-                <h2>Portfolio Items Go Here...</h2>
+                <h2>{this.state.pageTitle}</h2>
+
+                <button onClick={() => this.handleFilter('ArcTrooper')}>
+                    Arc Trooper
+                </button>
+                <button onClick={() => this.handleFilter('Captain')}>
+                    Captain
+                </button>
+                <button onClick={() => this.handleFilter('Commander')}>
+                    Commander
+                </button>
 
                 {this.portfolioitems()}
             </div>
