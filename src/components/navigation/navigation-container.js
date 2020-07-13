@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class NavigationComponent extends Components {
+export default class NavigationComponent extends Component {
     constructor() {
         super();
     }
