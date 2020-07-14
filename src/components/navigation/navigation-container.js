@@ -12,7 +12,7 @@ export default class NavigationComponent extends Component {
                 <button>About</button>
                 <button>Contact</button>
                 <button>Blog</button>
-                <button>Add Blog</button>
+                {true ? <button>Add Blog</button> : null}
             </div>
         )
     }
