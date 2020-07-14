@@ -18,15 +18,14 @@ export default class App extends Component {
 
         <Router>
           <div>
-          <NavigationContainer />
-      
-          <Switch>
-            <Route excact path ="/" component = {Home} />
-            <Route path="/about-me" component = {About} />
-          </Switch>
+            <NavigationContainer />
+
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about-me" component={About} />
+            </Switch>
           </div>
         </Router>
-
         <h1>Ellie Clark Portfolio</h1>
         <div>
           {moment().format("MMM Do YYY, h.mm.ss a")}
