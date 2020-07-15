@@ -10,17 +10,17 @@ export default class PortfolioContainer extends Component {
             pageTitle: "Welcome To My Portfolio" ,
             isLoading: false ,
             data: [
-                { title: "Rex" , category: 'Captain' },
-                { title: "Ahsoka" , category: 'Commander' }, 
-                { title: "Fives" , category: 'ArcTrooper'}, 
-                { title: "Echo" , category: 'ArcTrooper'}
+                { title: "Rex" , category: 'Captain', slug: 'Rex' },
+                { title: "Ahsoka" , category: 'Commander' , slug: 'Ahsoka' }, 
+                { title: "Fives" , category: 'ArcTrooper', slug: 'Fives'}, 
+                { title: "Echo" , category: 'ArcTrooper', slug: 'Echo'}
             ]
         };
     }
 
     portfolioitems() {
         return this.state.data.map(item => {
-            return <PortfolioItem title = {item.title} url = {"google.com"} />
+            return <PortfolioItem title = {item.title} url = {"google.com"} slug={item.slug} />
         });
     
         this.handleFilter = this.handleFilter.bind(this);
