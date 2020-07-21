@@ -71,7 +71,9 @@ export default class PortfolioContainer extends Component {
                     Commander
                 </button>
 
+                <div className="portfolio-items-wrapper">
                 {this.portfolioitems()}
+                </div>
             </div>
         )
     }

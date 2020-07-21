@@ -1,4 +1,9 @@
 body {
     margin: 0px;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Sora', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
 }
